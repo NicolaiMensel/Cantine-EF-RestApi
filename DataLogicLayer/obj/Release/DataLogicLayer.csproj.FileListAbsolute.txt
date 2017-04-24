@@ -1,0 +1,9 @@
+C:\School\MobileApps\KantineRestApiSolution\DataLogicLayer\bin\Release\DataLogicLayer.dll.config
+C:\School\MobileApps\KantineRestApiSolution\DataLogicLayer\bin\Release\DataLogicLayer.dll
+C:\School\MobileApps\KantineRestApiSolution\DataLogicLayer\bin\Release\DataLogicLayer.pdb
+C:\School\MobileApps\KantineRestApiSolution\DataLogicLayer\bin\Release\EntityFramework.dll
+C:\School\MobileApps\KantineRestApiSolution\DataLogicLayer\bin\Release\EntityFramework.SqlServer.dll
+C:\School\MobileApps\KantineRestApiSolution\DataLogicLayer\bin\Release\EntityFramework.xml
+C:\School\MobileApps\KantineRestApiSolution\DataLogicLayer\bin\Release\EntityFramework.SqlServer.xml
+C:\School\MobileApps\KantineRestApiSolution\DataLogicLayer\obj\Release\DataLogicLayer.dll
+C:\School\MobileApps\KantineRestApiSolution\DataLogicLayer\obj\Release\DataLogicLayer.pdb
