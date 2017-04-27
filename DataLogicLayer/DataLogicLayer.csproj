@@ -54,9 +54,7 @@
     <Compile Include="Contexts\DbInit.cs" />
     <Compile Include="Entities\AbstractId.cs" />
     <Compile Include="Entities\Dish.cs" />
-    <Compile Include="Entities\ImageFileModel.cs" />
     <Compile Include="Entities\MenuEntity.cs" />
-    <Compile Include="Entities\ViewModel\ImageViewModel.cs" />
     <Compile Include="Factory\Factory.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

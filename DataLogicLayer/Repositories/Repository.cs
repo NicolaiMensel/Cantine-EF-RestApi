@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using DataLogicLayer.Contexts;
 using DataLogicLayer.Entities;
-using DataLogicLayer.Entities.ViewModel;
 
 namespace DataLogicLayer.Repositories
 {
@@ -60,22 +59,10 @@ namespace DataLogicLayer.Repositories
         {
             using (var db = new CantineContext())
             {
-                foreach (var dish in t.Dishes)
-                {
-                    var file = CreateImageFileModel(dish.Image);
-                }
                 db.Menus.Add(t);
                 db.SaveChanges();
                 return t;
             }
-        }
-
-
-        private ImageFileModel CreateImageFileModel(ImageViewModel viewModel)
-        {
-            var fileData = new MemoryStream();
-            viewModel.File.InputStream.CopyTo(fileData);
-            return new ImageFileModel { Title = viewModel.Title, File = fileData.ToArray() };
         }
     }
 }

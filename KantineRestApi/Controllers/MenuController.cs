@@ -7,7 +7,6 @@ using System.Net.Http;
 using System.Web.Http;
 using DataLogicLayer;
 using DataLogicLayer.Entities;
-using DataLogicLayer.Entities.ViewModel;
 using DataLogicLayer.Factory;
 
 namespace KantineRestApi.Controllers
