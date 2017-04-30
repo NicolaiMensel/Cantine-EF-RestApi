@@ -5,6 +5,7 @@ using DataLogicLayer.Entities;
 
 namespace DataLogicLayer.Contexts
 {
+    //public class DbInit : DropCreateDatabaseAlways<CantineContext>
     public class DbInit : CreateDatabaseIfNotExists<CantineContext>
     {
         protected override void Seed(CantineContext db)
@@ -21,25 +22,25 @@ namespace DataLogicLayer.Contexts
                         {
                             Id = 1,
                             Name = "Tarteletter",
-                            Image = ""
+                            Image = "http://res.cloudinary.com/bjoernebanden/image/upload/v1493482165/24556159-tarteletter_iux6to.jpg"
                         },
                         new Dish()
                         {
                             Id = 2,
                             Name = "Stegt flæsk",
-                            Image = ""
+                            Image = "http://res.cloudinary.com/bjoernebanden/image/upload/v1493482190/restaurant-bennys-aarhus-080515-2221262-regular_mmb71l.jpg"
                         },
                         new Dish()
                         {
                             Id = 3,
                             Name = "Råkost salat",
-                            Image = ""
+                            Image = "http://res.cloudinary.com/bjoernebanden/image/upload/v1493487117/ra_CC_8Akost-med-spidska_CC_8Al-og-guler_C3_B8dder_lyyrhu.jpg"
                         },
                         new Dish()
                         {
                             Id = 4,
                             Name = "Klar suppe med boller",
-                            Image = ""
+                            Image = "http://res.cloudinary.com/bjoernebanden/image/upload/v1493482217/klar-suppe-med-k_C3_B8d-og-melboller-23_tajljq.jpg"
                         }
                     }
                 },
@@ -53,19 +54,19 @@ namespace DataLogicLayer.Contexts
                         {
                             Id = 5,
                             Name = "Tomat suppe",
-                            Image = ""
+                            Image = "http://res.cloudinary.com/bjoernebanden/image/upload/v1493482114/582239-960x720-tomatensuppe_vobtvc.jpg"
                         },
                         new Dish()
                         {
                             Id = 6,
-                            Name = "Stegt flæsk",
-                            Image = ""
+                            Name = "Flæskesteg",
+                            Image = "http://res.cloudinary.com/bjoernebanden/image/upload/v1493482083/Flaeskesteg-af-svinekam-med-sproed-svaer-og-traditionelt-tilbehoer-2_b7g3ft.jpg"
                         },
                         new Dish()
                         {
                             Id = 7,
                             Name = "Salat",
-                            Image = ""
+                            Image = "http://res.cloudinary.com/bjoernebanden/image/upload/v1493482436/opskrift-in-modemagasinet-in-sommersalat-foraarssalat_v9eqvu.jpg"
                         }
                     }
                 }
@@ -78,7 +79,7 @@ namespace DataLogicLayer.Contexts
                 db.Menus.Add(menu);
             }
             base.Seed(db);
-            
+
         }
 
     }

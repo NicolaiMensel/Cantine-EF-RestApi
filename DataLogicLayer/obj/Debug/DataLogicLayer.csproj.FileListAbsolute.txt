@@ -17,3 +17,16 @@ C:\School\Cantine-EF-RestApi\DataLogicLayer\bin\Debug\EntityFramework.xml
 C:\School\Cantine-EF-RestApi\DataLogicLayer\bin\Debug\EntityFramework.SqlServer.xml
 C:\School\Cantine-EF-RestApi\DataLogicLayer\obj\Debug\DataLogicLayer.dll
 C:\School\Cantine-EF-RestApi\DataLogicLayer\obj\Debug\DataLogicLayer.pdb
+C:\Users\Jeanette\Documents\GitHub\MobileApps\Cantine-EF-RestApi\DataLogicLayer\bin\Debug\DataLogicLayer.dll.config
+C:\Users\Jeanette\Documents\GitHub\MobileApps\Cantine-EF-RestApi\DataLogicLayer\bin\Debug\DataLogicLayer.dll
+C:\Users\Jeanette\Documents\GitHub\MobileApps\Cantine-EF-RestApi\DataLogicLayer\bin\Debug\DataLogicLayer.pdb
+C:\Users\Jeanette\Documents\GitHub\MobileApps\Cantine-EF-RestApi\DataLogicLayer\bin\Debug\CloudinaryDotNet.dll
+C:\Users\Jeanette\Documents\GitHub\MobileApps\Cantine-EF-RestApi\DataLogicLayer\bin\Debug\EntityFramework.dll
+C:\Users\Jeanette\Documents\GitHub\MobileApps\Cantine-EF-RestApi\DataLogicLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jeanette\Documents\GitHub\MobileApps\Cantine-EF-RestApi\DataLogicLayer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Jeanette\Documents\GitHub\MobileApps\Cantine-EF-RestApi\DataLogicLayer\bin\Debug\EntityFramework.xml
+C:\Users\Jeanette\Documents\GitHub\MobileApps\Cantine-EF-RestApi\DataLogicLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jeanette\Documents\GitHub\MobileApps\Cantine-EF-RestApi\DataLogicLayer\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Jeanette\Documents\GitHub\MobileApps\Cantine-EF-RestApi\DataLogicLayer\obj\Debug\DataLogicLayer.csprojResolveAssemblyReference.cache
+C:\Users\Jeanette\Documents\GitHub\MobileApps\Cantine-EF-RestApi\DataLogicLayer\obj\Debug\DataLogicLayer.dll
+C:\Users\Jeanette\Documents\GitHub\MobileApps\Cantine-EF-RestApi\DataLogicLayer\obj\Debug\DataLogicLayer.pdb
