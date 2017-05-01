@@ -33,6 +33,19 @@ namespace KantineRestApi.Controllers
             return Ok(menu);
         }
 
+        /// <summary>
+        /// Returns a list of URL's of all images.
+        /// </summary>
+        /// <returns></returns>
+        // GET: api/Menu/GetAllImages
+        [Route("api/Menu/GetAllImages")]
+        [HttpGet]
+        public List<string> GetAllImages()
+        {
+            var allImages = _menuRep.GetAll().SelectMany(x => x.Dishes).OrderBy(x => x.Name).GroupBy(x => x.Image).Select(x => x.FirstOrDefault().Image).ToList();
+            return allImages;
+        }
+
         // POST: api/Menu
         public IHttpActionResult Post(MenuEntity menu)
         {
