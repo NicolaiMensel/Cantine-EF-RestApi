@@ -6,7 +6,7 @@ namespace DataLogicLayer.Contexts
 {
     public class CantineContext : DbContext
     {
-        public CantineContext() : base("CantineDBContext")
+        public CantineContext() : base("DefaultConnection")
         {
             Configuration.ProxyCreationEnabled = false;
             Database.SetInitializer(new DbInit());

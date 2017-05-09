@@ -10,9 +10,11 @@ using DataLogicLayer.Entities;
 using DataLogicLayer.Factory;
 using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
+using System.Web.Http.Cors;
 
 namespace KantineRestApi.Controllers
 {
+    [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
     public class MenuController : ApiController
     {
         private readonly IRepository<MenuEntity> _menuRep = Factory.GetRepository;
@@ -74,6 +76,7 @@ namespace KantineRestApi.Controllers
         }
 
         // DELETE: api/Menu/5
+        [HttpDelete]
         public IHttpActionResult Delete(int id)
         {
             MenuEntity menu = _menuRep.Get(id);
@@ -119,6 +122,13 @@ namespace KantineRestApi.Controllers
         {
             public string DishName { get; set; }
             public byte[] ImageBytes { get; set; }
+        }
+
+        public HttpResponseMessage OptionsMenu()
+        {
+            var response = new HttpResponseMessage();
+            response.StatusCode = HttpStatusCode.OK;
+            return response;
         }
 
     }
