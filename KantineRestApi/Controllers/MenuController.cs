@@ -44,7 +44,11 @@ namespace KantineRestApi.Controllers
         [HttpGet]
         public List<string> GetAllImages()
         {
-            var allImages = _menuRep.GetAll().SelectMany(x => x.Dishes).OrderBy(x => x.Name).GroupBy(x => x.Image).Select(x => x.FirstOrDefault().Image).ToList();
+            var allImages = _menuRep.GetAll()
+                .SelectMany(x => x.Dishes)
+                .OrderBy(x => x.Name)
+                .GroupBy(x => x.Image)
+                .Select(x => x.FirstOrDefault().Image).ToList();
             return allImages;
         }
 
@@ -87,6 +91,13 @@ namespace KantineRestApi.Controllers
             _menuRep.Delete(menu);
             return Ok(menu);
         }
+
+        public class ImageUploadModel
+        {
+            public string DishName { get; set; }
+            public byte[] ImageBytes { get; set; }
+        }
+
         [Route("api/Menu/UploadImage")]
         [HttpPost]
         public IHttpActionResult UploadImage(ImageUploadModel image)
@@ -94,9 +105,9 @@ namespace KantineRestApi.Controllers
             try
             {
                 Account account = new Account(
-      "bjoernebanden",
-      "299845895553394",
-      "i0N6o94uiAXrDIqu38i8KSM0q7k");
+                "bjoernebanden",
+                "299845895553394",
+                "i0N6o94uiAXrDIqu38i8KSM0q7k");
 
                 var result = "";
 
@@ -116,20 +127,7 @@ namespace KantineRestApi.Controllers
             {
                 return Ok(ex.Message);
             }
-        }
-
-        public class ImageUploadModel
-        {
-            public string DishName { get; set; }
-            public byte[] ImageBytes { get; set; }
-        }
-
-        public HttpResponseMessage OptionsMenu()
-        {
-            var response = new HttpResponseMessage();
-            response.StatusCode = HttpStatusCode.OK;
-            return response;
-        }
+        }        
 
     }
 }
