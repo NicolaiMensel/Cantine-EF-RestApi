@@ -63,6 +63,7 @@ namespace KantineRestApi.Controllers
             return CreatedAtRoute("DefaultApi", new { id = menu.Id }, menu);
         }
 
+        [HttpPut]
         // PUT: api/Menu/5
         public IHttpActionResult Put(int id, MenuEntity menu)
         {

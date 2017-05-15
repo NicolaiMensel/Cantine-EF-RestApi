@@ -40,18 +40,40 @@ namespace DataLogicLayer.Repositories
             }
         }
 
-        public MenuEntity Update(MenuEntity t)
+        public void Update(MenuEntity t)
         {
+            List<int> dishesToDelete = new List<int>();
             using (var db = new CantineContext())
             {
                 var menuToUpdate = db.Menus.Include("Dishes").FirstOrDefault(x => x.Id == t.Id);
-                if (menuToUpdate != null)
+                foreach (var dish in menuToUpdate.Dishes)
                 {
-                    menuToUpdate.Dishes = t.Dishes;
-                    menuToUpdate.Date = t.Date;
+                    if (t.Dishes.FirstOrDefault(x => x.Id == dish.Id) == null)
+                    {
+                        dishesToDelete.Add(dish.Id.Value);
+                    }
+                }
+                foreach (var id in dishesToDelete)
+                {
+                    db.Entry(menuToUpdate.Dishes.FirstOrDefault(x => x.Id == id)).State = EntityState.Deleted;
+                }
+                foreach (var dish in t.Dishes)
+                {
+                    if (dish.Id.HasValue)
+                    {
+                        var dishToUpdate = menuToUpdate.Dishes.FirstOrDefault(x => x.Id == dish.Id);
+
+                        dishToUpdate.Image = dish.Image;
+                        dishToUpdate.Name = dish.Name;
+                        db.Entry(dishToUpdate).State = EntityState.Modified;
+                    }
+                    else
+                    {
+                        menuToUpdate.Dishes.Add(dish);
+                    }
                 }
                 db.SaveChanges();
-                return db.Menus.Include("Dishes").FirstOrDefault(x => x.Id == t.Id);
+                //return db.Menus.Include("Dishes").FirstOrDefault(x => x.Id == t.Id);
             }
         }
 

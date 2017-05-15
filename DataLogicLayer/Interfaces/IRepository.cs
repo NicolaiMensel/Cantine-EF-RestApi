@@ -31,7 +31,7 @@ namespace DataLogicLayer
         /// </summary>
         /// <param name="t"></param>
         /// <returns></returns>
-        T Update(T t);
+        void Update(T t);
 
         /// <summary>
         /// Create an object in the Repository, this allows the Repository to handle ID creation.

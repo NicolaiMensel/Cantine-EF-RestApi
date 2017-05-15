@@ -5,8 +5,8 @@ using DataLogicLayer.Entities;
 
 namespace DataLogicLayer.Contexts
 {
-    //public class DbInit : DropCreateDatabaseAlways<CantineContext>
-    public class DbInit : CreateDatabaseIfNotExists<CantineContext>
+    public class DbInit : DropCreateDatabaseAlways<CantineContext>
+    //public class DbInit : CreateDatabaseIfNotExists<CantineContext>
     {
         protected override void Seed(CantineContext db)
         {
