@@ -12,7 +12,6 @@ namespace DataLogicLayer.Repositories
 {
     public class ImageRepository
     {
-
         public string UploadImge(string dishName, byte[] imageBytes)
         {
             var imageModel = new ImageUploadModel();

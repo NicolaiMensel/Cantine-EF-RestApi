@@ -10,14 +10,18 @@ namespace DataLogicLayer.Repositories
 {
     public class Repository : IRepository<MenuEntity>
     {
-        public List<MenuEntity> GetAll()
+        /*CREATE*/
+        public MenuEntity Create(MenuEntity t)
         {
             using (var db = new CantineContext())
             {
-                return db.Menus.Include("Dishes").ToList();
+                db.Menus.Add(t);
+                db.SaveChanges();
+                return t;
             }
         }
 
+        /*READ BY ID*/
         public MenuEntity Get(int id)
         {
             using (var db = new CantineContext())
@@ -26,21 +30,16 @@ namespace DataLogicLayer.Repositories
             }
         }
 
-        public bool Delete(MenuEntity t)
+        /*READ ALL*/
+        public List<MenuEntity> GetAll()
         {
             using (var db = new CantineContext())
             {
-                MenuEntity menu = db.Menus.Include("Dishes").FirstOrDefault(x => x.Id == t.Id);
-                foreach (var dish in menu.Dishes.ToList())
-                {
-                    db.Entry(dish).State = EntityState.Deleted;
-                }
-                db.Entry(menu).State = EntityState.Deleted;
-                db.SaveChanges();
-                return db.Menus.FirstOrDefault(x => x.Id == t.Id) == null;
+                return db.Menus.Include("Dishes").ToList();
             }
         }
 
+        /*UPDATE*/
         public void Update(MenuEntity t)
         {
             List<int> dishesToDelete = new List<int>();
@@ -74,23 +73,23 @@ namespace DataLogicLayer.Repositories
                     }
                 }
                 db.SaveChanges();
-                //return db.Menus.Include("Dishes").FirstOrDefault(x => x.Id == t.Id);
             }
         }
 
-        public MenuEntity Create(MenuEntity t)
+        /*DELETE*/
+        public bool Delete(MenuEntity t)
         {
             using (var db = new CantineContext())
             {
-                db.Menus.Add(t);
+                MenuEntity menu = db.Menus.Include("Dishes").FirstOrDefault(x => x.Id == t.Id);
+                foreach (var dish in menu.Dishes.ToList())
+                {
+                    db.Entry(dish).State = EntityState.Deleted;
+                }
+                db.Entry(menu).State = EntityState.Deleted;
                 db.SaveChanges();
-                return t;
+                return db.Menus.FirstOrDefault(x => x.Id == t.Id) == null;
             }
-        }
-
-        public static implicit operator Repository(ImageRepository v)
-        {
-            throw new NotImplementedException();
         }
     }
 }

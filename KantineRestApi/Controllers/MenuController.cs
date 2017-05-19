@@ -16,11 +16,12 @@ using DataLogicLayer.Repositories;
 
 namespace KantineRestApi.Controllers
 {
-    [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
+    [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")] // For JS web app.
     public class MenuController : ApiController
     {
         private readonly IRepository<MenuEntity> _menuRep = Factory.GetRepository;
         private readonly ImageRepository _imgRepo = Factory.GetImageRepository;
+
         // GET: api/Menu
         public List<MenuEntity> Get()
         {
@@ -36,23 +37,6 @@ namespace KantineRestApi.Controllers
                 return NotFound();
             }
             return Ok(menu);
-        }
-
-        /// <summary>
-        /// Returns a list of URL's of all images.
-        /// </summary>
-        /// <returns></returns>
-        // GET: api/Menu/GetAllImages
-        [Route("api/Menu/GetAllImages")]
-        [HttpGet]
-        public List<string> GetAllImages()
-        {
-            var allImages = _menuRep.GetAll()
-                .SelectMany(x => x.Dishes)
-                .OrderBy(x => x.Name)
-                .GroupBy(x => x.Image)
-                .Select(x => x.FirstOrDefault().Image).ToList();
-            return allImages;
         }
 
         // POST: api/Menu
@@ -107,5 +91,21 @@ namespace KantineRestApi.Controllers
             return Ok(_imgRepo.UploadImge(image.DishName, image.ImageBytes));
         }
 
+        /// <summary>
+        /// Returns a list of URL's of all images.
+        /// </summary>
+        /// <returns></returns>
+        // GET: api/Menu/GetAllImages
+        [Route("api/Menu/GetAllImages")]
+        [HttpGet]
+        public List<string> GetAllImages()
+        {
+            var allImages = _menuRep.GetAll()
+                .SelectMany(x => x.Dishes)
+                .OrderBy(x => x.Name)
+                .GroupBy(x => x.Image)
+                .Select(x => x.FirstOrDefault().Image).ToList();
+            return allImages;
+        }
     }
 }
