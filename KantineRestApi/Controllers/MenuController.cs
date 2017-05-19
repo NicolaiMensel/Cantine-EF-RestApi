@@ -11,6 +11,8 @@ using DataLogicLayer.Factory;
 using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
 using System.Web.Http.Cors;
+using KantineRestApi.Models;
+using DataLogicLayer.Repositories;
 
 namespace KantineRestApi.Controllers
 {
@@ -18,6 +20,7 @@ namespace KantineRestApi.Controllers
     public class MenuController : ApiController
     {
         private readonly IRepository<MenuEntity> _menuRep = Factory.GetRepository;
+        private readonly ImageRepository _imgRepo = Factory.GetImageRepository;
         // GET: api/Menu
         public List<MenuEntity> Get()
         {
@@ -93,42 +96,16 @@ namespace KantineRestApi.Controllers
             return Ok(menu);
         }
 
-        public class ImageUploadModel
-        {
-            public string DishName { get; set; }
-            public byte[] ImageBytes { get; set; }
-        }
-
         [Route("api/Menu/UploadImage")]
         [HttpPost]
         public IHttpActionResult UploadImage(ImageUploadModel image)
         {
-            try
+            if (!ModelState.IsValid)
             {
-                Account account = new Account(
-                "bjoernebanden",
-                "299845895553394",
-                "i0N6o94uiAXrDIqu38i8KSM0q7k");
-
-                var result = "";
-
-                Cloudinary cloudinary = new Cloudinary(account);
-                var ms = new MemoryStream(image.ImageBytes);
-
-                var uploadParams = new ImageUploadParams()
-                {
-                    File = new FileDescription(image.DishName, ms)
-                };
-                var uploadResult = cloudinary.Upload(uploadParams);
-                result = uploadResult.Uri.ToString().Replace("\"", "");
-
-                return Ok(result);
+                return BadRequest(ModelState);
             }
-            catch (Exception ex)
-            {
-                return Ok(ex.Message);
-            }
-        }        
+            return Ok(_imgRepo.UploadImge(image.DishName, image.ImageBytes));
+        }
 
     }
 }

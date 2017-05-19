@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.IO;
 using System.Linq;
@@ -85,6 +86,11 @@ namespace DataLogicLayer.Repositories
                 db.SaveChanges();
                 return t;
             }
+        }
+
+        public static implicit operator Repository(ImageRepository v)
+        {
+            throw new NotImplementedException();
         }
     }
 }
