@@ -35,7 +35,7 @@ namespace DataLogicLayer.Repositories
         {
             using (var db = new CantineContext())
             {
-                return db.Menus.Include("Dishes").ToList();
+                return db.Menus.Include("Dishes").OrderByDescending(x => x.Date).ToList();
             }
         }
 
