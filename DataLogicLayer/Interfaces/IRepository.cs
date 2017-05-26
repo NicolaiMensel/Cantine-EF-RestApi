@@ -40,5 +40,11 @@ namespace DataLogicLayer
         /// <param name="name"></param>
         /// <returns></returns>
         T Create(T t);
+
+        /// <summary>
+        /// Return todays menu - For JS web app
+        /// </summary>
+        /// <returns></returns>
+        MenuEntity GetTodaysMenu();
     }
 }

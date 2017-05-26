@@ -12,7 +12,7 @@ namespace DataLogicLayer.Contexts
         {
             List<MenuEntity> _menus = new List<MenuEntity>() { 
                 #region DUMMY DATA
-                new MenuEntity()
+            new MenuEntity()
                 {
                     Id = 1,
                     Date = DateTime.Now,
@@ -28,45 +28,57 @@ namespace DataLogicLayer.Contexts
                         {
                             Id = 2,
                             Name = "Stegt flæsk",
-                            Image = "http://res.cloudinary.com/bjoernebanden/image/upload/v1493482190/restaurant-bennys-aarhus-080515-2221262-regular_mmb71l.jpg"
+                            Image = "http://res.cloudinary.com/bjoernebanden/image/upload/v1495820289/stegtfl%C3%A6sk_rbt7bu.jpg"
                         },
                         new Dish()
                         {
                             Id = 3,
-                            Name = "Råkost salat",
-                            Image = "http://res.cloudinary.com/bjoernebanden/image/upload/v1493487117/ra_CC_8Akost-med-spidska_CC_8Al-og-guler_C3_B8dder_lyyrhu.jpg"
+                             Name = "Tomatsalat",
+                            Image = "http://res.cloudinary.com/bjoernebanden/image/upload/v1495820290/mixedsalat_ovekxf.jpg"
                         },
                         new Dish()
                         {
                             Id = 4,
-                            Name = "Klar suppe med boller",
-                            Image = "http://res.cloudinary.com/bjoernebanden/image/upload/v1493482217/klar-suppe-med-k_C3_B8d-og-melboller-23_tajljq.jpg"
+                            Name = "Minestronesuppe",
+                            Image = "http://res.cloudinary.com/bjoernebanden/image/upload/v1495820289/minestrone_lfb5da.jpg"
                         }
                     }
                 },
                 new MenuEntity()
                 {
                     Id = 2,
-                    Date = DateTime.Now.AddDays(4),
+                    Date = DateTime.Now.AddDays(1),
                     Dishes = new List<Dish>()
                     {
                         new Dish()
                         {
                             Id = 5,
-                            Name = "Tomat suppe",
-                            Image = "http://res.cloudinary.com/bjoernebanden/image/upload/v1493482114/582239-960x720-tomatensuppe_vobtvc.jpg"
+                            Name = "Tomatsuppe",
+                            Image = "http://res.cloudinary.com/bjoernebanden/image/upload/v1495820290/tomatsuppe_mxmihk.png"
                         },
                         new Dish()
                         {
                             Id = 6,
                             Name = "Flæskesteg",
-                            Image = "http://res.cloudinary.com/bjoernebanden/image/upload/v1493482083/Flaeskesteg-af-svinekam-med-sproed-svaer-og-traditionelt-tilbehoer-2_b7g3ft.jpg"
+                            Image = "http://res.cloudinary.com/bjoernebanden/image/upload/v1495820289/fl%C3%A6skesteg_uqjyip.jpg"
                         },
                         new Dish()
                         {
                             Id = 7,
-                            Name = "Salat",
-                            Image = "http://res.cloudinary.com/bjoernebanden/image/upload/v1493482436/opskrift-in-modemagasinet-in-sommersalat-foraarssalat_v9eqvu.jpg"
+                            Name = "Frikadeller",
+                            Image = "http://res.cloudinary.com/bjoernebanden/image/upload/v1495820290/frikadeller_ko7rlj.jpg"
+                        },
+                        new Dish()
+                        {
+                            Id = 8,
+                            Name = "Pastasalat",
+                            Image = "http://res.cloudinary.com/bjoernebanden/image/upload/v1495820291/pastasalat_oslbhf.jpg"
+                        },
+                        new Dish()
+                        {
+                            Id = 9,
+                            Name = "Frisk grøn salat",
+                            Image = "http://res.cloudinary.com/bjoernebanden/image/upload/v1495820289/salat_h0stfe.jpg"
                         }
                     }
                 }

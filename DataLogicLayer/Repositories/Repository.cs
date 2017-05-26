@@ -91,5 +91,18 @@ namespace DataLogicLayer.Repositories
                 return db.Menus.FirstOrDefault(x => x.Id == t.Id) == null;
             }
         }
+
+        /*GET TODAYS MENU*/
+        public MenuEntity GetTodaysMenu()
+        {
+            using (var db = new CantineContext())
+            {
+                var today = DateTime.Now.Date;
+                return db.Menus.Include("Dishes").FirstOrDefault(
+                   x => x.Date.Day == today.Day
+                && x.Date.Month == today.Month
+                && x.Date.Year == today.Year);
+            }
+        }
     }
 }

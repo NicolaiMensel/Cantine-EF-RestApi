@@ -45,18 +45,10 @@ namespace KantineRestApi.Controllers
         public List<string> GetAllImages()
         {
             var allImages = _menuRep.GetAll()
-                .SelectMany(x => x.Dishes);
-
-            var orderedImages = allImages
-                .OrderBy(x => x.Name);
-
-            var groupedImages = orderedImages
-                .GroupBy(x => x.Image);
-
-            var sorteredImages = groupedImages
+                .SelectMany(x => x.Dishes)
+                .GroupBy(x => x.Image)
                 .Select(x => x.FirstOrDefault().Image).ToList();
-
-            return sorteredImages;
+            return allImages;            
         }
 
         // POST: api/Menu
@@ -100,6 +92,14 @@ namespace KantineRestApi.Controllers
             return Ok(menu);
         }
 
+        // Get today's menu.
+        [Route("api/Menu/GetTodaysMenu")]
+        [HttpGet]
+        public MenuEntity GetTodaysMenu()
+        {
+            return _menuRep.GetTodaysMenu();
+        }
+
         public class ImageUploadModel
         {
             public string DishName { get; set; }
@@ -135,7 +135,7 @@ namespace KantineRestApi.Controllers
             {
                 return Ok(ex.Message);
             }
-        }        
+        }
 
     }
 }
