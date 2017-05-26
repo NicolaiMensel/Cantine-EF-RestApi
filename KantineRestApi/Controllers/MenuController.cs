@@ -45,11 +45,18 @@ namespace KantineRestApi.Controllers
         public List<string> GetAllImages()
         {
             var allImages = _menuRep.GetAll()
-                .SelectMany(x => x.Dishes)
-                .OrderBy(x => x.Name)
-                .GroupBy(x => x.Image)
+                .SelectMany(x => x.Dishes);
+
+            var orderedImages = allImages
+                .OrderBy(x => x.Name);
+
+            var groupedImages = orderedImages
+                .GroupBy(x => x.Image);
+
+            var sorteredImages = groupedImages
                 .Select(x => x.FirstOrDefault().Image).ToList();
-            return allImages;
+
+            return sorteredImages;
         }
 
         // POST: api/Menu

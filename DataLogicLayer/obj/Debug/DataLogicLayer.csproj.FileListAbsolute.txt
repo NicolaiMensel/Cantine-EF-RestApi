@@ -70,3 +70,14 @@ C:\Users\Jeane\Documents\GitHub\MobileApps\Cantine-EF-RestApi\DataLogicLayer\bin
 C:\Users\Jeane\Documents\GitHub\MobileApps\Cantine-EF-RestApi\DataLogicLayer\obj\Debug\DataLogicLayer.csprojResolveAssemblyReference.cache
 C:\Users\Jeane\Documents\GitHub\MobileApps\Cantine-EF-RestApi\DataLogicLayer\obj\Debug\DataLogicLayer.dll
 C:\Users\Jeane\Documents\GitHub\MobileApps\Cantine-EF-RestApi\DataLogicLayer\obj\Debug\DataLogicLayer.pdb
+C:\School\Cantine-EF-RestApi\DataLogicLayer\bin\Debug\CloudinaryDotNet.dll
+C:\School\Cantine-EF-RestApi\DataLogicLayer\bin\Debug\Newtonsoft.Json.dll
+C:\School\Cantine-EF-RestApi\DataLogicLayer\bin\Debug\System.Net.Http.Formatting.dll
+C:\School\Cantine-EF-RestApi\DataLogicLayer\bin\Debug\System.Web.Cors.dll
+C:\School\Cantine-EF-RestApi\DataLogicLayer\bin\Debug\System.Web.Http.Cors.dll
+C:\School\Cantine-EF-RestApi\DataLogicLayer\bin\Debug\System.Web.Http.dll
+C:\School\Cantine-EF-RestApi\DataLogicLayer\bin\Debug\Newtonsoft.Json.xml
+C:\School\Cantine-EF-RestApi\DataLogicLayer\bin\Debug\System.Net.Http.Formatting.xml
+C:\School\Cantine-EF-RestApi\DataLogicLayer\bin\Debug\System.Web.Http.xml
+C:\School\Cantine-EF-RestApi\DataLogicLayer\bin\Debug\System.Web.Http.Cors.xml
+C:\School\Cantine-EF-RestApi\DataLogicLayer\obj\Debug\DataLogicLayer.csprojResolveAssemblyReference.cache

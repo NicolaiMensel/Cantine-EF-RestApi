@@ -471,3 +471,7 @@ C:\Users\Jeane\Documents\GitHub\MobileApps\Cantine-EF-RestApi\KantineRestApi\bin
 C:\Users\Jeane\Documents\GitHub\MobileApps\Cantine-EF-RestApi\KantineRestApi\obj\Debug\KantineRestApi.csprojResolveAssemblyReference.cache
 C:\Users\Jeane\Documents\GitHub\MobileApps\Cantine-EF-RestApi\KantineRestApi\obj\Debug\KantineRestApi.dll
 C:\Users\Jeane\Documents\GitHub\MobileApps\Cantine-EF-RestApi\KantineRestApi\obj\Debug\KantineRestApi.pdb
+C:\School\Cantine-EF-RestApi\KantineRestApi\bin\CloudinaryDotNet.dll
+C:\School\Cantine-EF-RestApi\KantineRestApi\bin\System.Web.Cors.dll
+C:\School\Cantine-EF-RestApi\KantineRestApi\bin\System.Web.Http.Cors.dll
+C:\School\Cantine-EF-RestApi\KantineRestApi\bin\System.Web.Http.Cors.xml
